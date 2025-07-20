@@ -4,3 +4,4 @@ torch
 peft
 scikit-learn
 matplotlib
+requests

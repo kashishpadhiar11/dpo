@@ -1,5 +1,3 @@
-# stepwise_reward.py
-
 """
 Implements the LLM-based stepwise reward model.
 """

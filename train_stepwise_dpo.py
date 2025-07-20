@@ -11,6 +11,8 @@ if __name__ == "__main__":
     # Load model and tokenizer (use a small model for testing)
     model_name = "distilgpt2"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(model_name)
 
     # Prepare data collator

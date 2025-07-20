@@ -55,3 +55,22 @@ See [LLM_USAGE.md](./LLM_USAGE.md) for details on AI/code generation assistance.
 
 ---
 
+This repo implements a stepwise DPO pipeline as described in "Let's Verify Step by Step" (OpenAI), using an LLM-based stepwise reward model.
+
+## How to Run
+1. Install requirements: `pip install -r requirements.txt`
+2. Prepare data: Place `train.jsonl` and `test.jsonl` in `data/`
+3. Preprocess: `python data_utils.py`
+4. Train: `python train_stepwise_dpo.py`
+
+## Results
+- Training loss: see logs in `results/`
+- (Optional) Model checkpoints: see `results/`
+
+## Trade-offs & Next Steps
+- Used a tiny model for local development due to hardware limits.
+- For real experiments, use a larger model on a GPU machine.
+
+## LLM Usage
+See `LLM_USAGE.md` for details.
+

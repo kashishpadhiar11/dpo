@@ -1,5 +1,6 @@
 import os
 from datasets import load_dataset
+import json
 
 def load_prm800k_dataset(data_dir: str = "data"):
     """
@@ -50,3 +51,7 @@ if __name__ == "__main__":
     train_processed = preprocess_prm800k(dataset["train"])
     print("First processed example:", train_processed[0] if train_processed else "No valid examples found.")
     print(f"Total processed examples: {len(train_processed)}")
+    # Save to file
+    with open("data/train_processed.jsonl", "w") as f:
+        for item in train_processed:
+            f.write(json.dumps(item) + "\n")

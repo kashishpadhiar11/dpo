@@ -9,7 +9,7 @@ class StepwiseDPOTrainer(Trainer):
         super().__init__(*args, **kwargs)
         # Add any custom initialization here
 
-    def compute_loss(self, model, inputs, return_outputs=False):
+    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
         """
         Override to aggregate stepwise rewards.
         """

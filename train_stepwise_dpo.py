@@ -14,7 +14,7 @@ if __name__ == "__main__":
     model = AutoModelForCausalLM.from_pretrained(model_name)
 
     # Prepare data collator
-    data_collator = StepwiseDataCollator()
+    data_collator = StepwiseDataCollator(tokenizer)
 
     # Prepare training arguments
     training_args = TrainingArguments(
